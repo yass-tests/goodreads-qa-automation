@@ -17,15 +17,19 @@ This project demonstrates automated UI and API testing for the Goodreads app usi
 
 ## Project Structure
 goodreads-qa-automation/
-- selenium-tests/            # Selenium UI automation tests (Java + TestNG)
-- ─ src/                   # Source code (Page Objects, test classes
-─ pom.xml                # Maven configuration file
-- postman-tests/             # Postman collections and environment files
-─ openlibrary_collection.json   # Postman collection JSON
-─ openlibrary_env.json          # Postman environment variables
-─ .github/
-- workflows/
-- ci.yml             # GitHub Actions workflow for CI/CD
-- LICENSE                    # MIT License file
-- README.md                  # Project documentation and overviews
-- .gitignore                 # Git ignore rules for Java, IDE, OS files
+├── selenium-tests/              # Selenium UI tests (Java + TestNG)
+│   ├── src/main/java/           # Page Object classes
+│   ├── src/test/java/           # Test classes
+│   ├── pom.xml                  # Maven config and dependencies
+│
+├── postman-tests/               # Postman API collections and environments
+│   ├── openlibrary_collection.json
+│   ├── openlibrary_env.json
+│
+├── .github/
+│   └── workflows/
+│       └── ci.yml               # GitHub Actions workflow for CI/CD
+│
+├── LICENSE                      # MIT License file
+├── README.md                    # Project documentation
+├── .gitignore                   # Git ignore settings
