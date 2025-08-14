@@ -59,6 +59,35 @@ public class GoodreadsSignupTest {
         // (Optional) Wait for the next page
         System.out.println("Signup form submitted.");
     }
+    @Test
+    public void testContinueWithAmazon() {
+        driver.get("https://www.goodreads.com/");
+
+        // Click "Continue with Amazon"
+        WebElement amazonButton = wait.until(
+                ExpectedConditions.elementToBeClickable(By.cssSelector("a.gr-button--amazon"))
+        );
+        amazonButton.click();
+
+        // Verify redirect to Amazon login page
+        wait.until(ExpectedConditions.urlContains("amazon.com"));
+        System.out.println("Redirected to Amazon login page.");
+    }
+    @Test
+    public void testContinueWithApple() {
+        driver.get("https://www.goodreads.com/");
+
+        // Click "Continue with Apple"
+        WebElement appleButton = wait.until(
+                ExpectedConditions.elementToBeClickable(By.cssSelector("a[href*='apple.com']"))
+        );
+        appleButton.click();
+
+        // Verify redirect to Apple login page
+        wait.until(ExpectedConditions.urlContains("apple.com"));
+        System.out.println("Redirected to Apple login page.");
+    }
+
 
     @AfterClass
     public void tearDown() {
